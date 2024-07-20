@@ -38,15 +38,6 @@ install_with_apt() {
     fi
 }
 
-# Prompt user for domain name
-echo "Please enter the domain name (e.g., domain.com):"
-read domain_name
-
-# Validate the input format
-if [[ ! $domain_name =~ ^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
-    echo "Invalid domain name format. Please enter the domain name in the format 'domain.com'."
-    exit 1
-fi
 
 # Check if puredns is installed; if not, install it
 if ! command_exists puredns; then
